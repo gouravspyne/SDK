@@ -1,5 +1,4 @@
-package com.spyneai.base
-
+package com.spyneai.shootlibrary
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

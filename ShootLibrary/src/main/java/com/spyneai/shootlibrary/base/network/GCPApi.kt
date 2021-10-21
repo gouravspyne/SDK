@@ -1,4 +1,4 @@
-package com.spyneai.base.network
+package com.spyneai.shootlibrary.base.network
 
 import okhttp3.RequestBody
 import okhttp3.ResponseBody

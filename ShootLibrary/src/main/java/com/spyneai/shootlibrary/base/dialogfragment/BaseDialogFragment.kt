@@ -1,4 +1,4 @@
-package com.spyneai.base
+package com.spyneai.shootlibrary.base.dialogfragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

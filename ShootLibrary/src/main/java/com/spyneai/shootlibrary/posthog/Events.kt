@@ -1,4 +1,4 @@
-package com.spyneai.posthog
+package com.spyneai.shootlibrary.posthog
 
 object Events {
     //on Boarding

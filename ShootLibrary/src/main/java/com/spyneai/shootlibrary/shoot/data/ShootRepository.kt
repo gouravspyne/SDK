@@ -1,13 +1,9 @@
-package com.spyneai.shoot.data
+package com.spyneai.shootlibrary.shoot.data
 
-import com.spyneai.base.BaseRepository
-import com.spyneai.base.network.ClipperApiClient
-import com.spyneai.base.network.ClipperApiStagingClient
-import com.spyneai.base.network.Resource
-import com.spyneai.needs.AppConstants
-import com.spyneai.needs.Utilities
-import com.spyneai.reshoot.data.ReshootOverlaysRes
-import com.spyneai.shoot.data.model.Image
+import com.spyneai.shootlibrary.BaseRepository
+import com.spyneai.shootlibrary.base.network.ClipperApiClient
+import com.spyneai.shootlibrary.base.network.ClipperApiStagingClient
+import com.spyneai.shootlibrary.shoot.data.model.Image
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -29,10 +25,10 @@ class ShootRepository : BaseRepository() {
         clipperApi.getSubCategories(authKey, prodId)
     }
 
-    suspend fun getOverlays(authKey: String, prodId: String,
-                            prodSubcategoryId : String, frames : String) = safeApiCall {
-        clipperApi.getOverlays(authKey, prodId, prodSubcategoryId, frames)
-    }
+//    suspend fun getOverlays(authKey: String, prodId: String,
+//                            prodSubcategoryId : String, frames : String) = safeApiCall {
+//        clipperApi.getOverlays(authKey, prodId, prodSubcategoryId, frames)
+//    }
 
     suspend fun uploadImage(
         project_id: RequestBody,
@@ -184,12 +180,12 @@ class ShootRepository : BaseRepository() {
     }
 
 
-    suspend fun sendFilesData(
-        authKey: String,
-        data : String
-    ) = safeApiCall {
-        clipperApi.sendFilesData(authKey,data)
-    }
+//    suspend fun sendFilesData(
+//        authKey: String,
+//        data : String
+//    ) = safeApiCall {
+//        clipperApi.sendFilesData(authKey,data)
+//    }
 
 
     suspend fun getProjectName(
@@ -198,9 +194,9 @@ class ShootRepository : BaseRepository() {
         clipperApi.getProjectName(authKey)
     }
 
-    suspend fun getOverlayIds(ids: JSONArray
-    ) = safeApiCall {
-        clipperApi.getOverlayIds(ids)
-    }
+//    suspend fun getOverlayIds(ids: JSONArray
+//    ) = safeApiCall {
+//        clipperApi.getOverlayIds(ids)
+//    }
 
 }

@@ -1,4 +1,4 @@
-package com.spyneai.shoot.adapters
+package com.spyneai.shootlibrary.shoot.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.spyneai.R
 import com.spyneai.shoot.data.ShootViewModel
+import com.spyneai.shootlibrary.R
+import com.spyneai.shootlibrary.shoot.data.ShootViewModel
 import java.util.*
 
 class CapturedImageAdapter(

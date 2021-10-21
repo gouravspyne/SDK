@@ -1,4 +1,4 @@
-package com.spyneai.base.network
+package com.spyneai.shootlibrary.base.network
 
 interface SpyneApi {
 

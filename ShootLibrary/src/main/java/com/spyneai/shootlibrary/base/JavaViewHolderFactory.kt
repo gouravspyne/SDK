@@ -1,21 +1,19 @@
-package com.spyneai.base
+package com.spyneai.shootlibrary
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.spyneai.R
-import com.spyneai.reshoot.ReshootHolder
-import com.spyneai.reshoot.SelectImageHolder
 import com.spyneai.shoot.data.OnOverlaySelectionListener
 import com.spyneai.shoot.holders.InteriorHolder
 import com.spyneai.shoot.holders.MiscHolder
 import com.spyneai.shoot.holders.OverlaysHolder
 import com.spyneai.shoot.holders.SubcategoryHolder
+import com.spyneai.shootlibrary.R
 
 
 object JavaViewHolderFactory {
 
     fun create(view: View, viewType: Int, listener: OnItemClickListener,
-                overlaySelectionListener: OnOverlaySelectionListener? = null): RecyclerView.ViewHolder {
+               overlaySelectionListener: OnOverlaySelectionListener? = null): RecyclerView.ViewHolder {
         return when (viewType) {
             R.layout.item_subcategories -> SubcategoryHolder(view, listener)
             R.layout.item_overlays -> OverlaysHolder(view, listener,overlaySelectionListener)

@@ -1,8 +1,8 @@
-package com.spyneai.shoot.data
+package com.spyneai.shootlibrary.shoot.data
 
-import com.spyneai.base.BaseRepository
-import com.spyneai.base.network.ClipperApiClient
-import com.spyneai.base.network.ClipperApiStagingClient
+import com.spyneai.shootlibrary.BaseRepository
+import com.spyneai.shootlibrary.base.network.ClipperApiClient
+import com.spyneai.shootlibrary.base.network.ClipperApiStagingClient
 import okhttp3.RequestBody
 
 class ProcessRepository : BaseRepository() {
@@ -34,28 +34,28 @@ class ProcessRepository : BaseRepository() {
         clipperApi.updateTotalFrames(authKey,skuId,totalFrames)
     }
 
-    suspend fun getUserCredits(
-        userId : String
-    )= safeApiCall {
-        clipperApi.userCreditsDetails(userId)
-    }
+//    suspend fun getUserCredits(
+//        userId : String
+//    )= safeApiCall {
+//        clipperApi.userCreditsDetails(userId)
+//    }
 
-    suspend fun reduceCredit(
-        userId : String,
-        creditReduce:String,
-        skuId: String
-    )= safeApiCall {
-        clipperApi.reduceCredit(userId, creditReduce,skuId)
-    }
+//    suspend fun reduceCredit(
+//        userId : String,
+//        creditReduce:String,
+//        skuId: String
+//    )= safeApiCall {
+//        clipperApi.reduceCredit(userId, creditReduce,skuId)
+//    }
 
-    suspend fun updateDownloadStatus(
-        userId : String,
-        skuId: String,
-        enterpriseId: String,
-        downloadHd: Boolean
-    )= safeApiCall {
-        clipperApi.updateDownloadStatus(userId,skuId, enterpriseId, downloadHd)
-    }
+//    suspend fun updateDownloadStatus(
+//        userId : String,
+//        skuId: String,
+//        enterpriseId: String,
+//        downloadHd: Boolean
+//    )= safeApiCall {
+//        clipperApi.updateDownloadStatus(userId,skuId, enterpriseId, downloadHd)
+//    }
 
     suspend fun skuProcessStateWithBackgroundId(
         auth_key: String,

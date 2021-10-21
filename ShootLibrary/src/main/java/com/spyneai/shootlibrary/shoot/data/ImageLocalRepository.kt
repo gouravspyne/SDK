@@ -1,14 +1,13 @@
-package com.spyneai.shoot.data
+package com.spyneai.shootlibrary.shoot.data
 
 import android.content.ContentValues
 import android.provider.BaseColumns
 import android.util.Log
-import com.spyneai.BaseApplication
 import com.spyneai.db.*
-import com.spyneai.needs.AppConstants
-import com.spyneai.shoot.data.model.Image
 import com.spyneai.shoot.utils.logUpload
-import com.spyneai.threesixty.data.model.VideoDetails
+import com.spyneai.shootlibrary.BaseApplication
+import com.spyneai.shootlibrary.needs.AppConstants
+import com.spyneai.shootlibrary.shoot.data.model.Image
 
 
 class ImageLocalRepository {
@@ -70,7 +69,7 @@ class ImageLocalRepository {
             put(Images.COLUMN_NAME_IS_STATUS_UPDATED, 0)
             put(Images.COLUMN_NAME_IS_RE_CLICK, 0)
             put(Images.COLUMN_NAME_IS_RESHOOT, image.isReshoot)
-            put(Images.COLUMN_NAME_IMAGE_PRE_SIGNED_URL,AppConstants.DEFAULT_PRESIGNED_URL)
+            put(Images.COLUMN_NAME_IMAGE_PRE_SIGNED_URL, AppConstants.DEFAULT_PRESIGNED_URL)
         }
 
         val newRowId = dbWritable?.insert(Images.TABLE_NAME, null, values)

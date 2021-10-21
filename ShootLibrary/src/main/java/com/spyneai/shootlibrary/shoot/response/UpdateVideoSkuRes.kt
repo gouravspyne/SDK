@@ -1,4 +1,4 @@
-package com.spyneai.shoot.response
+package com.spyneai.shootlibrary.shoot.response
 
 
 import com.google.gson.annotations.SerializedName

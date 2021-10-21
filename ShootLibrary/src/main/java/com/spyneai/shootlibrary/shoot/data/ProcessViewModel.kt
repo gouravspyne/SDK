@@ -1,21 +1,18 @@
-package com.spyneai.shoot.data
+package com.spyneai.shootlibrary.shoot.data
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import androidx.work.*
-import com.spyneai.BaseApplication
-import com.spyneai.base.network.Resource
-import com.spyneai.credits.model.DownloadHDRes
-import com.spyneai.credits.model.ReduceCreditResponse
 import com.spyneai.model.credit.CreditDetailsResponse
-import com.spyneai.shoot.data.model.CarsBackgroundRes
-import com.spyneai.shoot.data.model.ProcessSkuRes
-import com.spyneai.shoot.data.model.Sku
-import com.spyneai.shoot.data.model.UpdateTotalFramesRes
 import com.spyneai.shoot.response.SkuProcessStateResponse
 import com.spyneai.shoot.workmanager.ProjectStateUpdateWorker
+import com.spyneai.shootlibrary.BaseApplication
+import com.spyneai.shootlibrary.base.network.Resource
+import com.spyneai.shootlibrary.shoot.data.model.CarsBackgroundRes
+import com.spyneai.shootlibrary.shoot.data.model.ProcessSkuRes
+import com.spyneai.shootlibrary.shoot.data.model.Sku
+import com.spyneai.shootlibrary.shoot.data.model.UpdateTotalFramesRes
 import kotlinx.coroutines.launch
 import okhttp3.RequestBody
 
@@ -63,14 +60,14 @@ class ProcessViewModel : ViewModel() {
         get() = _userCreditsRes
 
 
-    private val _reduceCreditResponse: MutableLiveData<Resource<ReduceCreditResponse>> =
-        MutableLiveData()
-    val reduceCreditResponse: LiveData<Resource<ReduceCreditResponse>>
-        get() = _reduceCreditResponse
-
-    private val _downloadHDRes: MutableLiveData<Resource<DownloadHDRes>> = MutableLiveData()
-    val downloadHDRes: LiveData<Resource<DownloadHDRes>>
-        get() = _downloadHDRes
+//    private val _reduceCreditResponse: MutableLiveData<Resource<ReduceCreditResponse>> =
+//        MutableLiveData()
+//    val reduceCreditResponse: LiveData<Resource<ReduceCreditResponse>>
+//        get() = _reduceCreditResponse
+//
+//    private val _downloadHDRes: MutableLiveData<Resource<DownloadHDRes>> = MutableLiveData()
+//    val downloadHDRes: LiveData<Resource<DownloadHDRes>>
+//        get() = _downloadHDRes
 
     private val _skuProcessStateWithBgResponse: MutableLiveData<Resource<SkuProcessStateResponse>> =
         MutableLiveData()

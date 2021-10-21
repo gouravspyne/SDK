@@ -1,4 +1,5 @@
-package com.spyneai.shoot.utils
+package com.spyneai.shootlibrary.shoot.utils
+
 
 import android.util.Log
 

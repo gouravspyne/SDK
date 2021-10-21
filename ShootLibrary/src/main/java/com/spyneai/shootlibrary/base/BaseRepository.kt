@@ -1,8 +1,8 @@
-package com.spyneai.base
+package com.spyneai.shootlibrary
 
 import com.google.gson.JsonSyntaxException
-import com.spyneai.base.network.Resource
-import com.spyneai.base.network.ServerException
+import com.spyneai.shootlibrary.base.network.Resource
+import com.spyneai.shootlibrary.base.network.ServerException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException

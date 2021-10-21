@@ -1,4 +1,4 @@
-package com.spyneai.shoot.adapters
+package com.spyneai.shootlibrary.shoot.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,8 +9,8 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.spyneai.R
 import com.spyneai.dashboard.response.NewSubCatResponse
+import com.spyneai.shootlibrary.R
 
 class MiscAdapter(val context: Context,
                   val miscList: ArrayList<NewSubCatResponse.Miscellaneous>)

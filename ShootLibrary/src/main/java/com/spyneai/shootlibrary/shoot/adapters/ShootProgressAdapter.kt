@@ -1,4 +1,4 @@
-package com.spyneai.shoot.adapter
+package com.spyneai.shootlibrary.shoot.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import com.spyneai.R
 import com.spyneai.shoot.data.model.ShootProgress
+import com.spyneai.shootlibrary.R
 import java.util.*
 
 

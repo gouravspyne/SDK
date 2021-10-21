@@ -1,4 +1,4 @@
-package com.spyneai.shoot.data
+package com.spyneai.shootlibrary.shoot.data
 
 import org.json.JSONArray
 

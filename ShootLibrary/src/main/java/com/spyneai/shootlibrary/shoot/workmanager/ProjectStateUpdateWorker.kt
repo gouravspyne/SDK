@@ -1,14 +1,14 @@
-package com.spyneai.shoot.workmanager
+package com.spyneai.shootlibrary.shoot.workmanager
 
 import android.content.Context
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
 import com.posthog.android.Properties
-import com.spyneai.base.network.Resource
-import com.spyneai.captureEvent
-import com.spyneai.captureFailureEvent
-import com.spyneai.posthog.Events
-import com.spyneai.shoot.data.ShootRepository
+import com.spyneai.shootlibrary.base.network.Resource
+import com.spyneai.shootlibrary.posthog.Events
+import com.spyneai.shootlibrary.posthog.captureEvent
+import com.spyneai.shootlibrary.posthog.captureFailureEvent
+import com.spyneai.shootlibrary.shoot.data.ShootRepository
 
 class ProjectStateUpdateWorker (private val appContext: Context, workerParams: WorkerParameters) :
     CoroutineWorker(appContext, workerParams) {
@@ -28,7 +28,7 @@ class ProjectStateUpdateWorker (private val appContext: Context, workerParams: W
             inputData.getString("project_id")!!)
 
         when(response) {
-            is Resource.Success -> {
+            is Resource.Success<*> -> {
                 com.spyneai.shoot.utils.log("Frames updated success")
                 captureEvent(Events.PROJECT_STATE_UPDATED,true,null)
 

@@ -1,4 +1,4 @@
-package com.spyneai.shoot.adapters
+package com.spyneai.shootlibrary.shoot.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,8 +9,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.OnItemTouchListener
-import com.spyneai.R
 import com.spyneai.shoot.data.model.ProjectDetailResponse
+import com.spyneai.shootlibrary.R
 
 
 lateinit var projectChildAdapter: ProjectChildAdapter

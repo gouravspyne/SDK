@@ -1,13 +1,12 @@
-package com.spyneai.shoot.holders
+package com.spyneai.shootlibrary.shoot.holders
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.spyneai.base.GenericAdapter
-import com.spyneai.base.OnItemClickListener
-import com.spyneai.dashboard.response.NewSubCatResponse
-import com.spyneai.databinding.ItemSubcategoriesBinding
-import com.spyneai.needs.AppConstants
+import com.spyneai.shootlibrary.GenericAdapter
+import com.spyneai.shootlibrary.OnItemClickListener
+import com.spyneai.shootlibrary.needs.AppConstants
+import com.spyneai.shootlibrary.shoot.data.model.NewSubCatResponse
 
 class SubcategoryHolder(
     itemView: View,

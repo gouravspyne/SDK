@@ -1,22 +1,17 @@
-package com.spyneai.shoot.workmanager
+package com.spyneai.shootlibrary.shoot.workmanager
 
 import android.content.Context
 import android.content.Intent
+import android.media.MediaParser.SeekPoint.START
 import android.os.Build
 import androidx.core.content.ContextCompat
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
+import com.google.firebase.appindexing.builders.Actions
 import com.posthog.android.Properties
-import com.spyneai.captureEvent
-import com.spyneai.isMyServiceRunning
-import com.spyneai.needs.AppConstants
-import com.spyneai.needs.Utilities
-import com.spyneai.posthog.Events
-import com.spyneai.service.Actions
-import com.spyneai.service.ImageUploadingService
-import com.spyneai.service.getServiceState
-import com.spyneai.service.log
-import com.spyneai.shoot.data.ShootLocalRepository
+import com.spyneai.shootlibrary.isMyServiceRunning
+import com.spyneai.shootlibrary.posthog.Events
+import com.spyneai.shootlibrary.shoot.data.ShootLocalRepository
 
 class InternetWorker(private val appContext: Context, workerParams: WorkerParameters) :
     CoroutineWorker(appContext, workerParams) {

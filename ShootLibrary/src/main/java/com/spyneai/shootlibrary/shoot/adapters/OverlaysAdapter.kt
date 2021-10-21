@@ -1,18 +1,18 @@
-package com.spyneai.shoot.adapters
+package com.spyneai.shootlibrary.shoot.adapters
 
 import android.view.View
+import android.widget.AdapterView
 import androidx.recyclerview.widget.RecyclerView
-import com.spyneai.R
-import com.spyneai.base.GenericAdapter
-import com.spyneai.base.JavaViewHolderFactory
-import com.spyneai.base.OnItemClickListener
-import com.spyneai.camera2.OverlaysResponse
 import com.spyneai.dashboard.response.NewSubCatResponse
 import com.spyneai.shoot.data.OnOverlaySelectionListener
+import com.spyneai.shootlibrary.GenericAdapter
+import com.spyneai.shootlibrary.JavaViewHolderFactory
+import com.spyneai.shootlibrary.R
+import com.spyneai.shootlibrary.camera2.OverlaysResponse
 
 class OverlaysAdapter (
     list: List<Any>,
-    var listener: OnItemClickListener,
+    var listener: AdapterView.OnItemClickListener,
     var overlaySelectionListener : OnOverlaySelectionListener
 ) : GenericAdapter<Any>(list) {
 

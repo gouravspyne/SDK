@@ -1,11 +1,12 @@
-package com.spyneai.shoot.workmanager
+package com.spyneai.shootlibrary.shoot.workmanager
 
 import android.content.Context
 import androidx.work.*
 import com.posthog.android.Properties
-import com.spyneai.BaseApplication
-import com.spyneai.captureEvent
-import com.spyneai.posthog.Events
+import com.spyneai.shootlibrary.BaseApplication
+import com.spyneai.shootlibrary.posthog.Events
+import com.spyneai.shootlibrary.posthog.captureEvent
+import com.spyneai.shootlibrary.shoot.utils.log
 
 class ProcessSkuWorker(private val appContext: Context, workerParams: WorkerParameters) :
     CoroutineWorker(appContext, workerParams) {
@@ -42,7 +43,7 @@ class ProcessSkuWorker(private val appContext: Context, workerParams: WorkerPara
                 }
             }
         } else {
-            com.spyneai.shoot.utils.log("not found : start new")
+            log("not found : start new")
             //start recursive process worker
             start()
         }

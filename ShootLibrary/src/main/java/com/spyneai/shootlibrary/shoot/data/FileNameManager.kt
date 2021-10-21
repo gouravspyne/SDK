@@ -1,6 +1,7 @@
-package com.spyneai.shoot.data
+package com.spyneai.shootlibrary.shoot.data
 
-import com.spyneai.shoot.data.model.ShootData
+import com.spyneai.shootlibrary.shoot.data.model.ShootData
+
 
 class FileNameManager {
 

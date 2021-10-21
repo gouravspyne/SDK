@@ -1,16 +1,16 @@
-package com.spyneai.shoot.adapters
+package com.spyneai.shootlibrary.shoot.adapters
 
 import android.view.View
+import android.widget.AdapterView
 import androidx.recyclerview.widget.RecyclerView
-import com.spyneai.R
-import com.spyneai.base.GenericAdapter
-import com.spyneai.base.JavaViewHolderFactory
-import com.spyneai.base.OnItemClickListener
 import com.spyneai.dashboard.response.NewSubCatResponse
+import com.spyneai.shootlibrary.GenericAdapter
+import com.spyneai.shootlibrary.JavaViewHolderFactory
+import com.spyneai.shootlibrary.R
 
 class SubcatAndAngleAdapter(
     list: List<Any>,
-    var listener: OnItemClickListener
+    var listener: AdapterView.OnItemClickListener
 ) : GenericAdapter<Any>(list) {
 
     override fun getLayoutId(position: Int, obj: Any?): Int {

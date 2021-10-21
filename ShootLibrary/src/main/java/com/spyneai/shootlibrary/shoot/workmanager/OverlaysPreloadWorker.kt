@@ -1,10 +1,10 @@
-package com.spyneai.shoot.workmanager
+package com.spyneai.shootlibrary.shoot.workmanager
 
 import android.content.Context
 import androidx.work.*
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.spyneai.BaseApplication
+import com.spyneai.shootlibrary.BaseApplication
 
 class OverlaysPreloadWorker(private val appContext: Context, workerParams: WorkerParameters) :
     CoroutineWorker(appContext, workerParams) {

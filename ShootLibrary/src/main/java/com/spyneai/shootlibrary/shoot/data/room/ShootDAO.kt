@@ -1,4 +1,4 @@
-package com.spyneai.shoot.data.room
+package com.spyneai.shootlibrary.shoot.data.room
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao

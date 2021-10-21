@@ -1,4 +1,4 @@
-package com.spyneai
+package com.spyneai.shootlibrary
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
@@ -22,12 +22,10 @@ import android.widget.ImageButton
 import android.widget.Toast
 import androidx.annotation.DrawableRes
 import androidx.fragment.app.Fragment
-import com.posthog.android.Properties
-import com.spyneai.dashboard.ui.MainDashboardActivity
-import com.spyneai.loginsignup.activity.LoginActivity
-import com.spyneai.needs.AppConstants
-import com.spyneai.needs.Utilities
-import com.spyneai.posthog.Events
+import com.spyneai.shootlibrary.needs.AppConstants
+import com.spyneai.shootlibrary.needs.Utilities
+import com.spyneai.shootlibrary.posthog.Events
+import com.spyneai.shootlibrary.posthog.captureEvent
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
@@ -39,25 +37,25 @@ import kotlin.collections.ArrayList
 
 private var TAG = "Locale_Check"
 
-fun Context.gotoHome(){
-    val intent = Intent(this, MainDashboardActivity::class.java)
-    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-    startActivity(intent)
-}
+//fun Context.gotoHome(){
+//    val intent = Intent(this, MainDashboardActivity::class.java)
+//    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+//    startActivity(intent)
+//}
 
-fun Context.gotoLogin(){
-    this.captureEvent(Events.LOG_OUT, Properties())
-
-    Utilities.savePrefrence(this, AppConstants.TOKEN_ID, "")
-    Utilities.savePrefrence(this, AppConstants.AUTH_KEY, "")
-    Utilities.savePrefrence(this, AppConstants.PROJECT_ID, "")
-    Utilities.savePrefrence(this, AppConstants.SHOOT_ID, "")
-    Utilities.savePrefrence(this, AppConstants.SKU_ID, "")
-    Intent.FLAG_ACTIVITY_CLEAR_TASK
-    val intent = Intent(this, LoginActivity::class.java)
-    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-    startActivity(intent)
-}
+//fun Context.gotoLogin(){
+//    this.captureEvent(Events.LOG_OUT, Properties())
+//
+//    Utilities.savePrefrence(this, AppConstants.TOKEN_ID, "")
+//    Utilities.savePrefrence(this, AppConstants.AUTH_KEY, "")
+//    Utilities.savePrefrence(this, AppConstants.PROJECT_ID, "")
+//    Utilities.savePrefrence(this, AppConstants.SHOOT_ID, "")
+//    Utilities.savePrefrence(this, AppConstants.SKU_ID, "")
+//    Intent.FLAG_ACTIVITY_CLEAR_TASK
+//    val intent = Intent(this, LoginActivity::class.java)
+//    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+//    startActivity(intent)
+//}
 
 
 fun Context.isValidGlideContext() = this !is Activity || (!this.isDestroyed && !this.isFinishing)

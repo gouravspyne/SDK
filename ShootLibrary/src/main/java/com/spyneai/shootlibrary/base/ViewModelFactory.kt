@@ -1,14 +1,9 @@
-package com.spyneai.dashboard.ui.base
+package com.spyneai.shootlibrary
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.spyneai.dashboard.data.DashboardViewModel
-import com.spyneai.draft.data.DraftViewModel
-import com.spyneai.orders.data.viewmodel.MyOrdersViewModel
-import com.spyneai.processedimages.ui.data.ProcessedViewModel
 import com.spyneai.shoot.data.ProcessViewModel
 import com.spyneai.shoot.data.ShootViewModel
-import com.spyneai.threesixty.data.ThreeSixtyViewModel
 
 class ViewModelFactory() : ViewModelProvider.NewInstanceFactory() {
 

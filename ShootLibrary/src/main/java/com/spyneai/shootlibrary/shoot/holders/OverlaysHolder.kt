@@ -1,4 +1,4 @@
-package com.spyneai.shoot.holders
+package com.spyneai.shootlibrary.shoot.holders
 
 import android.util.Log
 import android.view.View
@@ -6,13 +6,12 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.spyneai.BaseApplication
-import com.spyneai.R
-import com.spyneai.base.GenericAdapter
-import com.spyneai.base.OnItemClickListener
-import com.spyneai.camera2.OverlaysResponse
-import com.spyneai.databinding.ItemOverlaysBinding
-import com.spyneai.shoot.data.OnOverlaySelectionListener
+import com.spyneai.shootlibrary.BaseApplication
+import com.spyneai.shootlibrary.GenericAdapter
+import com.spyneai.shootlibrary.OnItemClickListener
+import com.spyneai.shootlibrary.R
+import com.spyneai.shootlibrary.camera2.OverlaysResponse
+import com.spyneai.shootlibrary.shoot.data.OnOverlaySelectionListener
 
 class OverlaysHolder(
     itemView: View,
@@ -42,7 +41,8 @@ class OverlaysHolder(
 
         when{
             data.isSelected -> {
-                binding?.flOverlay?.background = ContextCompat.getDrawable(BaseApplication.getContext(),R.drawable.bg_overlay_selected)
+                binding?.flOverlay?.background = ContextCompat.getDrawable(BaseApplication.getContext(),
+                    R.drawable.bg_overlay_selected)
                 overlaySelectionListener?.onOverlaySelected(
                     binding?.flOverlay!!,
                     adapterPosition,

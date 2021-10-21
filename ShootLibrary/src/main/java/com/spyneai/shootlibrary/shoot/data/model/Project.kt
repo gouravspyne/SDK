@@ -1,4 +1,4 @@
-package com.spyneai.shoot.data.model
+package com.spyneai.shootlibrary.shoot.data.model
 
 class Project {
     var itemId : Long? = null

@@ -1,8 +1,9 @@
-package com.spyneai.shoot.utils
+package com.spyneai.shootlibrary.shoot.utils
 
 import android.content.Context
 
 import android.os.Build
+import com.spyneai.shoot.utils.MainExecutor
 
 import java.util.concurrent.Executor
 

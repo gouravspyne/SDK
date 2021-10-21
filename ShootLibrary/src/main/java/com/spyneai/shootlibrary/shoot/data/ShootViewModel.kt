@@ -1,25 +1,20 @@
-package com.spyneai.shoot.data
-
+package com.spyneai.shootlibrary.shoot.data
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import androidx.work.*
-import com.google.gson.JsonObject
-import com.spyneai.BaseApplication
-import com.spyneai.R
-import com.spyneai.base.network.Resource
-import com.spyneai.camera2.OverlaysResponse
-import com.spyneai.camera2.ShootDimensions
-import com.spyneai.dashboard.response.NewSubCatResponse
-import com.spyneai.needs.AppConstants
-import com.spyneai.needs.Utilities
 import com.spyneai.reshoot.data.ReshootOverlaysRes
-import com.spyneai.shoot.data.model.*
+import com.spyneai.shoot.data.modelpackage.GetProjectNameResponse
 import com.spyneai.shoot.response.SkuProcessStateResponse
 import com.spyneai.shoot.response.UpdateVideoSkuRes
 import com.spyneai.shoot.workmanager.OverlaysPreloadWorker
+import com.spyneai.shootlibrary.BaseApplication
+import com.spyneai.shootlibrary.base.network.Resource
+import com.spyneai.shootlibrary.camera2.OverlaysResponse
+import com.spyneai.shootlibrary.camera2.ShootDimensions
+import com.spyneai.shootlibrary.needs.AppConstants
+import com.spyneai.shootlibrary.shoot.data.model.*
 import kotlinx.coroutines.launch
 import org.json.JSONArray
 import org.json.JSONObject
@@ -190,53 +185,53 @@ class ShootViewModel : ViewModel() {
     val reshootOverlaysRes: LiveData<Resource<ReshootOverlaysRes>>
         get() = _reshootOverlaysRes
 
-    fun getSubCategories(
-        authKey: String, prodId: String
-    ) = viewModelScope.launch {
-        _subCategoriesResponse.value = Resource.Loading
-        _subCategoriesResponse.value = repository.getSubCategories(authKey, prodId)
-    }
+//    fun getSubCategories(
+//        authKey: String, prodId: String
+//    ) = viewModelScope.launch {
+//        _subCategoriesResponse.value = Resource.Loading
+//        _subCategoriesResponse.value = repository.getSubCategories(authKey, prodId)
+//    }
 
-    fun getProjectName(
-        authKey: String
-    ) = viewModelScope.launch {
-        _getProjectNameResponse.value = Resource.Loading
-        _getProjectNameResponse.value = repository.getProjectName(authKey)
-    }
+//    fun getProjectName(
+//        authKey: String
+//    ) = viewModelScope.launch {
+//        _getProjectNameResponse.value = Resource.Loading
+//        _getProjectNameResponse.value = repository.getProjectName(authKey)
+//    }
 
-    fun getOverlays(
-        authKey: String, prodId: String,
-        prodSubcategoryId: String, frames: String
-    ) = viewModelScope.launch {
-        _overlaysResponse.value = Resource.Loading
-        _overlaysResponse.value = repository.getOverlays(authKey, prodId, prodSubcategoryId, frames)
-    }
+//    fun getOverlays(
+//        authKey: String, prodId: String,
+//        prodSubcategoryId: String, frames: String
+//    ) = viewModelScope.launch {
+//        _overlaysResponse.value = Resource.Loading
+//        _overlaysResponse.value = repository.getOverlays(authKey, prodId, prodSubcategoryId, frames)
+//    }
 
-    suspend fun preloadOverlays(overlays: List<String>) {
-        //check if preload worker is alive
-        val workManager = WorkManager.getInstance(BaseApplication.getContext())
-
-        val workQuery = WorkQuery.Builder
-            .fromTags(listOf("Preload Overlays"))
-            .addStates(
-                listOf(
-                    WorkInfo.State.BLOCKED,
-                    WorkInfo.State.ENQUEUED,
-                    WorkInfo.State.RUNNING,
-                    WorkInfo.State.CANCELLED
-                )
-            )
-            .build()
-
-        val workInfos = workManager.getWorkInfos(workQuery).await()
-
-        if (workInfos.size > 0) {
-            // stop worker
-            startPreloadWorker(overlays)
-        } else {
-            startPreloadWorker(overlays)
-        }
-    }
+//    suspend fun preloadOverlays(overlays: List<String>) {
+//        //check if preload worker is alive
+//        val workManager = WorkManager.getInstance(BaseApplication.getContext())
+//
+//        val workQuery = WorkQuery.Builder
+//            .fromTags(listOf("Preload Overlays"))
+//            .addStates(
+//                listOf(
+//                    WorkInfo.State.BLOCKED,
+//                    WorkInfo.State.ENQUEUED,
+//                    WorkInfo.State.RUNNING,
+//                    WorkInfo.State.CANCELLED
+//                )
+//            )
+//            .build()
+//
+//        val workInfos = workManager.getWorkInfos(workQuery).await()
+//
+//        if (workInfos.size > 0) {
+//            // stop worker
+//            startPreloadWorker(overlays)
+//        } else {
+//            startPreloadWorker(overlays)
+//        }
+//    }
 
     private fun startPreloadWorker(overlays: List<String>) {
         val data = Data.Builder()
@@ -259,28 +254,28 @@ class ShootViewModel : ViewModel() {
             .enqueue(overlayPreloadWorkRequest)
     }
 
-    fun getProjectDetail(authKey: String, projectId: String) = viewModelScope.launch {
-        _projectDetailResponse.value = Resource.Loading
-        _projectDetailResponse.value = repository.getProjectDetail(authKey, projectId)
-    }
+//    fun getProjectDetail(authKey: String, projectId: String) = viewModelScope.launch {
+//        _projectDetailResponse.value = Resource.Loading
+//        _projectDetailResponse.value = repository.getProjectDetail(authKey, projectId)
+//    }
 
-    fun updateTotalFrames(skuId: String, totalFrames: String, authKey: String) =
-        viewModelScope.launch {
-            _updateTotalFramesRes.value = Resource.Loading
-            _updateTotalFramesRes.value = repository.updateTotalFrames(skuId, totalFrames, authKey)
-        }
-
-    fun getSelectedAngles(appName: String): Int {
-        return if (exterirorAngles.value == null) {
-            when (appName) {
-                AppConstants.CARS24, AppConstants.CARS24_INDIA -> 5
-                AppConstants.SELL_ANY_CAR -> 4
-                else -> 8
-            }
-        } else {
-            exterirorAngles.value!!
-        }
-    }
+//    fun updateTotalFrames(skuId: String, totalFrames: String, authKey: String) =
+//        viewModelScope.launch {
+//            _updateTotalFramesRes.value = Resource.Loading
+//            _updateTotalFramesRes.value = repository.updateTotalFrames(skuId, totalFrames, authKey)
+//        }
+//
+//    fun getSelectedAngles(appName: String): Int {
+//        return if (exterirorAngles.value == null) {
+//            when (appName) {
+//                AppConstants.CARS24, AppConstants.CARS24_INDIA -> 5
+//                AppConstants.SELL_ANY_CAR -> 4
+//                else -> 8
+//            }
+//        } else {
+//            exterirorAngles.value!!
+//        }
+//    }
 
     fun insertImage(shootData: ShootData) {
         val image = Image()
@@ -306,66 +301,66 @@ class ShootViewModel : ViewModel() {
         }
     }
 
-    fun createProject(
-        authKey: String, projectName: String, prodCatId: String,
-        dynamicLayout: JSONObject? = null,
-        location_data : JSONObject? = null
-    ) = viewModelScope.launch {
-        _createProjectRes.value = Resource.Loading
-        _createProjectRes.value =
-            repository.createProject(authKey, projectName, prodCatId, dynamicLayout,location_data)
-    }
+//    fun createProject(
+//        authKey: String, projectName: String, prodCatId: String,
+//        dynamicLayout: JSONObject? = null,
+//        location_data : JSONObject? = null
+//    ) = viewModelScope.launch {
+//        _createProjectRes.value = Resource.Loading
+//        _createProjectRes.value =
+//            repository.createProject(authKey, projectName, prodCatId, dynamicLayout,location_data)
+//    }
 
-    fun skuProcessState(
-        auth_key: String, project_id: String
-    ) = viewModelScope.launch {
-        _skuProcessStateResponse.value = Resource.Loading
-        _skuProcessStateResponse.value = repository.skuProcessState(auth_key, project_id)
-    }
+//    fun skuProcessState(
+//        auth_key: String, project_id: String
+//    ) = viewModelScope.launch {
+//        _skuProcessStateResponse.value = Resource.Loading
+//        _skuProcessStateResponse.value = repository.skuProcessState(auth_key, project_id)
+//    }
+//
+//    fun skuProcessStateWithBackgroundid(
+//        auth_key: String, project_id: String, background_id: Int
+//    ) = viewModelScope.launch {
+//        _skuProcessStateWithBgResponse.value = Resource.Loading
+//        _skuProcessStateWithBgResponse.value =
+//            repository.skuProcessStateWithBackgroundId(auth_key, project_id, background_id)
+//    }
+//
+//    fun skuProcessStateWithShadowOption(
+//        auth_key: String, project_id: String, background_id: Int, shadow: String
+//    ) = viewModelScope.launch {
+//        _skuProcessStateWithShadowResponse.value = Resource.Loading
+//        _skuProcessStateWithShadowResponse.value =
+//            repository.skuProcessStateWithShadowOption(auth_key, project_id, background_id, shadow)
+//    }
 
-    fun skuProcessStateWithBackgroundid(
-        auth_key: String, project_id: String, background_id: Int
-    ) = viewModelScope.launch {
-        _skuProcessStateWithBgResponse.value = Resource.Loading
-        _skuProcessStateWithBgResponse.value =
-            repository.skuProcessStateWithBackgroundId(auth_key, project_id, background_id)
-    }
 
-    fun skuProcessStateWithShadowOption(
-        auth_key: String, project_id: String, background_id: Int, shadow: String
-    ) = viewModelScope.launch {
-        _skuProcessStateWithShadowResponse.value = Resource.Loading
-        _skuProcessStateWithShadowResponse.value =
-            repository.skuProcessStateWithShadowOption(auth_key, project_id, background_id, shadow)
-    }
+//    fun createSku(
+//        authKey: String, projectId: String, prodCatId: String, prodSubCatId: String,
+//        skuName: String, totalFrames: Int
+//    ) = viewModelScope.launch {
+//        _createSkuRes.value = Resource.Loading
+//        _createSkuRes.value =
+//            repository.createSku(
+//                authKey,
+//                projectId,
+//                prodCatId,
+//                prodSubCatId,
+//                skuName,
+//                totalFrames,
+//                1,
+//                0
+//            )
+//    }
 
-
-    fun createSku(
-        authKey: String, projectId: String, prodCatId: String, prodSubCatId: String,
-        skuName: String, totalFrames: Int
-    ) = viewModelScope.launch {
-        _createSkuRes.value = Resource.Loading
-        _createSkuRes.value =
-            repository.createSku(
-                authKey,
-                projectId,
-                prodCatId,
-                prodSubCatId,
-                skuName,
-                totalFrames,
-                1,
-                0
-            )
-    }
-
-    fun updateVideoSku(
-        skuId: String,
-        prodSubCatId: String,
-        initialImageCount: Int
-    ) = viewModelScope.launch {
-        _updateVideoSkuRes.value = Resource.Loading
-        _updateVideoSkuRes.value = repository.updateVideoSku(skuId, prodSubCatId, initialImageCount)
-    }
+//    fun updateVideoSku(
+//        skuId: String,
+//        prodSubCatId: String,
+//        initialImageCount: Int
+//    ) = viewModelScope.launch {
+//        _updateVideoSkuRes.value = Resource.Loading
+//        _updateVideoSkuRes.value = repository.updateVideoSku(skuId, prodSubCatId, initialImageCount)
+//    }
 
     fun insertSku(sku: Sku) {
         localRepository.insertSku(sku)
@@ -388,16 +383,16 @@ class ShootViewModel : ViewModel() {
     fun updateProjectStatus(projectId: String) = localRepository.updateProjectStatus(projectId)
 
 
-    fun updateFootwearSubcategory(
-    ) = viewModelScope.launch {
-        _updateFootwearSubcatRes.value = Resource.Loading
-        _updateFootwearSubcatRes.value = repository.updateFootwearSubcategory(
-            Utilities.getPreference(BaseApplication.getContext(), AppConstants.AUTH_KEY).toString(),
-            sku.value?.skuId!!,
-            exterirorAngles.value!!,
-            subCategory.value?.prod_sub_cat_id!!
-        )
-    }
+//    fun updateFootwearSubcategory(
+//    ) = viewModelScope.launch {
+//        _updateFootwearSubcatRes.value = Resource.Loading
+//        _updateFootwearSubcatRes.value = repository.updateFootwearSubcategory(
+//            Utilities.getPreference(BaseApplication.getContext(), AppConstants.AUTH_KEY).toString(),
+//            sku.value?.skuId!!,
+//            exterirorAngles.value!!,
+//            subCategory.value?.prod_sub_cat_id!!
+//        )
+//    }
 
     fun updateVideoSkuLocally(sku: Sku) {
         localRepository.updateVideoSkuLocally(sku)
@@ -664,12 +659,12 @@ class ShootViewModel : ViewModel() {
     }
 
 
-    fun getOverlayIds(
-        ids: JSONArray
-    ) = viewModelScope.launch {
-        _reshootOverlaysRes.value = Resource.Loading
-        _reshootOverlaysRes.value = repository.getOverlayIds(ids)
-    }
+//    fun getOverlayIds(
+//        ids: JSONArray
+//    ) = viewModelScope.launch {
+//        _reshootOverlaysRes.value = Resource.Loading
+//        _reshootOverlaysRes.value = repository.getOverlayIds(ids)
+//    }
 
 
     var gifDialogShown = false

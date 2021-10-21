@@ -1,4 +1,4 @@
-package com.spyneai.base.network
+package com.spyneai.shootlibrary.base.network
 
 import com.spyneai.getRequestHeaderData
 import okhttp3.Interceptor

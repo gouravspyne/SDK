@@ -1,17 +1,17 @@
-package com.spyneai.shoot.data
+package com.spyneai.shootlibrary.shoot.data
 
 import android.content.ContentValues
 import android.provider.BaseColumns
 import android.util.Log
-import com.spyneai.BaseApplication
 import com.spyneai.db.DBHelper
 import com.spyneai.db.Images
 import com.spyneai.db.Projects
 import com.spyneai.db.ShootContract
-import com.spyneai.shoot.data.model.Image
-import com.spyneai.shoot.data.model.Project
-import com.spyneai.shoot.data.model.Sku
 import com.spyneai.shoot.utils.logUpload
+import com.spyneai.shootlibrary.BaseApplication
+import com.spyneai.shootlibrary.shoot.data.model.Image
+import com.spyneai.shootlibrary.shoot.data.model.Project
+import com.spyneai.shootlibrary.shoot.data.model.Sku
 
 class ShootLocalRepository {
 
