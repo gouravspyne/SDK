@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="@dimen/dp_200"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="@dimen/dp_10"
+    android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvChooseShot"
+                    android:textSize="@dimen/sp_16"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/medium"
+                    android:textColor="@color/black"
+                    android:text="@string/choose_shoots"/>
+
+                <TextView
+                    android:id="@+id/tvMoreAngle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/sp_13"
+                    android:fontFamily="@font/medium"
+                    android:textColor="@color/black"
+                    android:text="@string/more_angles" />
+
+                <NumberPicker
+                    android:id="@+id/npShoots"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/AppTheme.Picker"
+                    android:descendantFocusability="blocksDescendants"
+                    android:selectionDividerHeight="@dimen/dp_1" />
+            <TextView
+                android:id="@+id/tvProceed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/proceed"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:padding="@dimen/dp_10"
+                android:fontFamily="@font/medium"
+                android:layout_margin="@dimen/dp_10"
+                android:layout_marginStart="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_20"
+                android:background="@drawable/bg_rectangle_button_ripple"
+                android:textSize="16sp" />
+</LinearLayout>

@@ -2,8 +2,8 @@ package com.spyneai.shootlibrary
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.spyneai.shoot.data.ProcessViewModel
-import com.spyneai.shoot.data.ShootViewModel
+import com.spyneai.shootlibrary.shoot.data.ProcessViewModel
+import com.spyneai.shootlibrary.shoot.data.ShootViewModel
 
 class ViewModelFactory() : ViewModelProvider.NewInstanceFactory() {
 

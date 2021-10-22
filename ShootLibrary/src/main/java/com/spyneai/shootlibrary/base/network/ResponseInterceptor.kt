@@ -1,9 +1,9 @@
 package com.spyneai.shootlibrary.base.network
 
 import com.posthog.android.Properties
-import com.spyneai.captureEvent
-import com.spyneai.posthog.Events
 import com.spyneai.shootlibrary.BaseApplication
+import com.spyneai.shootlibrary.posthog.Events
+import com.spyneai.shootlibrary.posthog.captureEvent
 import okhttp3.Interceptor
 import okhttp3.MediaType
 import okhttp3.Request

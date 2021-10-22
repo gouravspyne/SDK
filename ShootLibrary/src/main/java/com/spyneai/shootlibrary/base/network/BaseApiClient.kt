@@ -26,7 +26,7 @@ BaseApiClient<Api>(val BASE_URL: String, api: Class<Api>){
 //                }
             }
                 .addInterceptor(RequestInterceptor())
-               .addInterceptor(com.spyneai.base.network.ResponseInterceptor())
+               .addInterceptor(com.spyneai.shootlibrary.base.network.ResponseInterceptor())
                 .readTimeout(5, TimeUnit.MINUTES)
                 .writeTimeout(5, TimeUnit.MINUTES)
                 .connectTimeout(5, TimeUnit.MINUTES)

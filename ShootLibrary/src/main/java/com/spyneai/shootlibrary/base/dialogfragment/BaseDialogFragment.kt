@@ -8,7 +8,7 @@ import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
-import com.spyneai.dashboard.ui.base.ViewModelFactory
+import com.spyneai.shootlibrary.ViewModelFactory
 
 abstract class BaseDialogFragment<VM : ViewModel, B : ViewBinding> : DialogFragment() {
 

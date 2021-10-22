@@ -3,4 +3,11 @@
     package="com.spyneai.shootlibrary">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application>
+        <activity
+            android:name=".DemoActivity"
+            android:exported="false" />
+    </application>
+
 </manifest>

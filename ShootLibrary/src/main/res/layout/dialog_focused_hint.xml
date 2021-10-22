@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dp_10"
+    android:layout_gravity="center"
+    android:padding="@dimen/dp_10"
+    android:gravity="center">
+
+   <FrameLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="@string/we_recommend_focused"
+           android:gravity="center"
+           android:fontFamily="@font/medium"
+           android:textSize="@dimen/sp_13"
+           android:textColor="@color/primary"
+           android:layout_gravity="left|center_vertical"
+           android:id="@+id/tvSkuNameDialog"
+           android:layout_marginLeft="@dimen/dp_10"
+           app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintBottom_toBottomOf="@id/ivClose"
+           app:layout_constraintLeft_toLeftOf="parent"
+           app:layout_constraintRight_toLeftOf="@id/ivClose"/>
+
+       <ImageView
+           android:layout_width="35dp"
+           android:layout_height="35dp"
+           android:id="@+id/ivClose"
+           android:src="@drawable/ic_close"
+           android:padding="@dimen/dp_10"
+           android:layout_gravity="right"
+           app:layout_constraintRight_toRightOf="parent"
+           app:layout_constraintTop_toTopOf="parent"/>
+   </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/dp_10">
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_80"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:id="@+id/ivFirst"
+            android:src="@mipmap/pedal"
+            app:riv_corner_radius="@dimen/dp_7"/>
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_80"
+            android:layout_marginStart="@dimen/dp_10"
+            android:id="@+id/ivSecond"
+            android:src="@mipmap/engine"
+            app:riv_corner_radius="@dimen/dp_7"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/dp_10"
+        android:orientation="horizontal">
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_80"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:src="@mipmap/keys"
+            android:id="@+id/ivThird"
+            app:riv_corner_radius="@dimen/dp_7"/>
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_80"
+            android:layout_marginStart="@dimen/dp_10"
+            android:src="@mipmap/tyre"
+            android:id="@+id/ivFourth"
+            app:riv_corner_radius="@dimen/dp_7"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/tvSkipFocused"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/skip"
+            android:padding="@dimen/dp_5"
+            android:gravity="center"
+            android:textColor="@color/primary"
+            android:fontFamily="@font/medium"
+            android:textSize="@dimen/sp_15"
+            android:layout_margin="@dimen/dp_5"
+            android:background="@drawable/bg_skip"
+            android:textAllCaps="false"/>
+
+        <TextView
+            android:id="@+id/tvShootNowFocused"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/shoot_now"
+            android:padding="@dimen/dp_5"
+            android:gravity="center"
+            android:layout_margin="@dimen/dp_5"
+            android:textColor="@color/white"
+            android:fontFamily="@font/medium"
+            android:textSize="@dimen/sp_15"
+            android:background="@drawable/bg_edit_button"
+            android:textAllCaps="false"/>
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

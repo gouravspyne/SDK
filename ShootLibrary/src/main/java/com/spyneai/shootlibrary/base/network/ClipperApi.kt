@@ -1,16 +1,14 @@
 package com.spyneai.shootlibrary.base.network
 
-import com.spyneai.dashboard.response.NewSubCatResponse
-
-
-import com.spyneai.shoot.data.model.*
-import com.spyneai.shoot.response.SkuProcessStateResponse
-import com.spyneai.shoot.response.UpdateVideoSkuRes
-import com.spyneai.shoot.response.UploadFolderRes
-import com.spyneai.shoot.response.UploadStatusRes
+import com.spyneai.shoot.data.modelpackage.GetProjectNameResponse
 import com.spyneai.shootlibrary.BaseApplication
 import com.spyneai.shootlibrary.needs.AppConstants
 import com.spyneai.shootlibrary.needs.Utilities
+import com.spyneai.shootlibrary.shoot.data.model.*
+import com.spyneai.shootlibrary.shoot.response.SkuProcessStateResponse
+import com.spyneai.shootlibrary.shoot.response.UpdateVideoSkuRes
+import com.spyneai.shootlibrary.shoot.response.UploadFolderRes
+import com.spyneai.shootlibrary.shoot.response.UploadStatusRes
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import okhttp3.ResponseBody

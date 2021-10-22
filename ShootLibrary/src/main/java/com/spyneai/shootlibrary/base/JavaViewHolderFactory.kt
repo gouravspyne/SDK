@@ -2,12 +2,13 @@ package com.spyneai.shootlibrary
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.spyneai.shoot.data.OnOverlaySelectionListener
-import com.spyneai.shoot.holders.InteriorHolder
-import com.spyneai.shoot.holders.MiscHolder
-import com.spyneai.shoot.holders.OverlaysHolder
-import com.spyneai.shoot.holders.SubcategoryHolder
-import com.spyneai.shootlibrary.R
+import com.spyneai.shootlibrary.reshoot.ReshootHolder
+import com.spyneai.shootlibrary.reshoot.SelectImageHolder
+import com.spyneai.shootlibrary.shoot.data.OnOverlaySelectionListener
+import com.spyneai.shootlibrary.shoot.holders.InteriorHolder
+import com.spyneai.shootlibrary.shoot.holders.MiscHolder
+import com.spyneai.shootlibrary.shoot.holders.OverlaysHolder
+import com.spyneai.shootlibrary.shoot.holders.SubcategoryHolder
 
 
 object JavaViewHolderFactory {

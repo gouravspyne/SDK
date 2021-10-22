@@ -1,6 +1,6 @@
 package com.spyneai.shootlibrary.base.network
 
-import com.spyneai.getRequestHeaderData
+import com.spyneai.shootlibrary.getRequestHeaderData
 import okhttp3.Interceptor
 import okhttp3.Response
 
